@@ -1,3 +1,7 @@
+body {
+  background-color: var(--background-color);
+}
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -7,18 +11,31 @@
   font-family: var(--font-fam);
   background-image: url();
   background-size: cover;
+  padding-inline: 50px;
 }
 
 .content-wrapper {
-  border-left: 3px solid var(--accent-color);
-  height: 95%;
+  position: relative;
   display: flex;
   flex-direction: column;
   flex: 3;
   gap: 50px;
+  height: 95%;
+  border-left: 3px solid var(--accent-color);
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  transition: 0.5s all ease;
+}
+
+.sticker-wrapper, .about-wrapper, .change-theme-wrapper, .add-sticker-wrapper, .boards-wrapper, .rearrange-wrapper {
+  position: absolute;
+  width: 90%;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .content-wrapper::-webkit-scrollbar {
@@ -33,16 +50,22 @@
   gap: 30px;
   font-weight: 600;
   font-size: 1.3rem;
+  padding: 60px 40px;
 }
 
-.content-wrapper, .utils-wrapper {
-  padding: 60px 40px;
+.utils-wrapper a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.content-wrapper {
+  padding: 60px 0px 60px 40px;
 }
 
 .util-link {
   border: 3px solid var(--accent-color);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.492);
   padding: 10px 20px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -56,6 +79,7 @@
 .sticker {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   gap: 20px;
   border: 3px solid var(--accent-color);
   border-radius: 10px;
@@ -86,4 +110,56 @@
 
 .board-name {
   font-size: 2rem;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 1.8rem;
+  line-height: 55px;
+}
+
+.about-wrapper span {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.sticker-tip {
+  font-size: 1.2rem;
+  line-height: 25px;
+  font-style: italic;
+}
+
+.change-theme-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.enter-theme {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 3px solid var(--accent-color);
+  padding: 10px 20px;
+}
+
+.text-input {
+  padding: 5px 5px;
+}
+
+.border-line {
+  flex-direction: row;
+}
+
+.change-theme-add {
+  padding: 10px 20px;
+}
+
+.active {
+  background-color: var(--accent-color);
+  color: var(--main-color);
 }
