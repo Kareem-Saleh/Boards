@@ -1,6 +1,7 @@
 :root {
-  --main-color: rgb(255, 255, 255);
-  --accent-color: rgb(37, 37, 37);
-  --background-color: rgb(251, 242, 242);
+  --main-color: ;
+  --accent-color: ;
+  --sub-accent-color: ;
+  --background-color: ;
   --font-fam: "Montserrat", system-ui;
 }

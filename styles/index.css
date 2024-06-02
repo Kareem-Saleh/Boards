@@ -1,5 +1,7 @@
 body {
   background-color: var(--background-color);
+  background-image: url();
+  transition: all 1s ease;
 }
 
 .wrapper {
@@ -9,7 +11,6 @@ body {
   width: 60dvw;
   margin: auto;
   font-family: var(--font-fam);
-  background-image: url();
   background-size: cover;
   padding-inline: 50px;
 }
@@ -51,6 +52,7 @@ body {
   font-weight: 600;
   font-size: 1.3rem;
   padding: 60px 40px;
+  color: var(--accent-color);
 }
 
 .utils-wrapper a {
@@ -74,6 +76,23 @@ body {
 .util-link:hover {
   background-color: var(--accent-color);
   color: var(--main-color);
+}
+
+.sticker-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.sticker-add-box {
+  color: var(--main-color);
+  background-color: var(--sub-accent-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  outline: none;
+  resize: none;
+  overflow: hidden;
 }
 
 .sticker {
@@ -137,26 +156,49 @@ body {
   gap: 30px;
   font-size: 1.2rem;
   font-weight: 600;
+  color: var(--main-color);
+  background-color: var(--accent-color);
+  padding: 40px 40px;
+  border-radius: 15px;
+  color: var(--main-color);
 }
 
 .enter-theme {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  border: 3px solid var(--accent-color);
   padding: 10px 20px;
+  background-color: var(--sub-accent-color);
+  border-radius: 8px;
+  width: 70%;
 }
 
 .text-input {
   padding: 5px 5px;
+  border: none;
+  outline: none;
+  background-color: var(--sub-accent-color);
+  border-bottom: 3px solid var(--main-color);
+  color: inherit;
 }
 
 .border-line {
   flex-direction: row;
 }
 
-.change-theme-add {
+.theme-button {
   padding: 10px 20px;
+  color: inherit;
+  background-color: var(--sub-accent-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+
+.theme-button:hover {
+  background-color: var(--main-color);
+  color: var(--accent-color);
 }
 
 .active {

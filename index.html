@@ -81,34 +81,35 @@
       </div>
 
       <div class="change-theme-wrapper hidden">
-        <p>*RGB, hex and hsl values can be used.</p>
+        <p>*Only hex values can be used.</p>
 
         <div class="enter-theme">
           <p>Enter a main colour</p>
-          <input type="text" class="text-input">
+          <input type="text" class="text-input main-color">
         </div>
 
         <div class="enter-theme">
           <p>Enter an accent colour</p>
-          <input type="text" class="text-input">
+          <input type="text" class="text-input accent-color">
+        </div>
+
+        <div class="enter-theme">
+          <p>Enter a sub accent colour</p>
+          <input type="text" class="text-input sub-accent-color">
         </div>
 
         <div class="enter-theme">
           <p>Enter a background colour</p>
-          <input type="text" class="text-input">
+          <input type="text" class="text-input background-color">
         </div>
 
         <div class="enter-theme">
           <p>Enter a background image (optional)</p>
-          <input type="file">
+          <input type="file" class="file-input">
         </div>
 
-        <div class="enter-theme border-line">
-          <p>Border Line</p>
-          <input type="checkbox" checked>
-        </div>
-
-        <button class="change-theme-add">Change Theme</button>
+        <button class="change-theme-add theme-button">Change Theme</button>
+        <button class="change-theme-reset theme-button">Reset Theme</button>
       </div>
 
       <div class="boards-wrapper hidden">
@@ -125,6 +126,8 @@
     </div>
   </div>
 
-  <script src="/scripts/openUtil.js"></script>
+  <script src="/scripts/openUtil.js" type="module"></script>
+  <script src="/scripts/addSticky.js" type="module"></script>
+  <script src="/scripts/changeTheme.js"></script>
 </body>
 </html>
