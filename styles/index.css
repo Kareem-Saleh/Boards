@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   flex: 3;
   gap: 50px;
-  height: 95%;
+  height: 85%;
   border-left: 3px solid var(--accent-color);
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -29,7 +29,7 @@ body {
   transition: 0.5s all ease;
 }
 
-.sticker-wrapper, .about-wrapper, .change-theme-wrapper, .add-sticker-wrapper, .boards-wrapper, .rearrange-wrapper {
+.about-wrapper, .change-theme-wrapper, .add-sticker-wrapper, .boards-wrapper, .rearrange-wrapper {
   position: absolute;
   width: 90%;
 }
@@ -55,13 +55,20 @@ body {
   color: var(--accent-color);
 }
 
+.util-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .utils-wrapper a {
   color: inherit;
   text-decoration: none;
 }
 
 .content-wrapper {
-  padding: 60px 0px 60px 40px;
+  padding-block: 60px;
+  padding-inline: 40px;
 }
 
 .util-link {
@@ -98,8 +105,6 @@ body {
 .sticker {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  gap: 20px;
   border: 3px solid var(--accent-color);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -113,6 +118,7 @@ body {
   display: flex;
   flex-direction: row-reverse;
   gap: 30px;
+  margin-bottom: 20px;
   font-weight: bold;
 }
 
@@ -204,4 +210,17 @@ body {
 .active {
   background-color: var(--accent-color);
   color: var(--main-color);
+}
+
+.new-sticky {
+  background-color: var(--main-color);
+  color: var(--accent-color);
+  padding: 10px;
+  border-radius: 5px;
+  width: fit-content;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-left: 10px;
+  margin-top: 5px;
 }

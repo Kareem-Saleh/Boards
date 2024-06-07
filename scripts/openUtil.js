@@ -1,4 +1,4 @@
-import { pages } from "./data/pages.js"
+import {pages} from "./data/pages.js"
 
 const stickers = document.querySelector(".sticker-wrapper");
 
