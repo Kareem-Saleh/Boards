@@ -55,6 +55,7 @@ addButton.addEventListener("click", () => {
         const newSticky = document.querySelector(".new-sticky");
         newSticky.addEventListener("click", () => {
             let stickys = JSON.parse(localStorage.getItem("stickys")) || [];
+            const currentBoard = localStorage.getItem("currentBoard");
 
             const newStickyContent = textArea.value;
 
@@ -66,6 +67,7 @@ addButton.addEventListener("click", () => {
             const stickyInfo = {
                 content: newStickyContent,
                 id: uuidSticky,
+                board: currentBoard,
             };
 
             stickys.push(stickyInfo);
