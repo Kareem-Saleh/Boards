@@ -8,53 +8,64 @@ const changeThemeButton = document.querySelector(".change-theme-add");
 const resetThemeButton = document.querySelector(".change-theme-reset");
 
 // 1st: main, 2nd: accent, 3rd: sub accent, 4th: background
-colors = JSON.parse(localStorage.getItem("colors")) || ["rgb(255, 255, 255)", "rgb(37, 37, 37)", "rgb(57, 57, 57)", "rgb(251, 242, 242)"];
+colors = JSON.parse(localStorage.getItem("colors")) || [
+  "rgb(255, 255, 255)",
+  "rgb(37, 37, 37)",
+  "rgb(57, 57, 57)",
+  "rgb(251, 242, 242)",
+];
 
-root.style.setProperty("--main-color", colors[0]);
-root.style.setProperty("--accent-color", colors[1]);
-root.style.setProperty("--sub-accent-color", colors[2]);
-root.style.setProperty("--background-color", colors[3]);
+// set colours on load
+changeColours(colors);
 
 function isValidHex(hex) {
-    const hexRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
-    return hexRegex.test(hex);
+  const hexRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+  return hexRegex.test(hex);
+}
+
+function changeColours(colors) {
+  root.style.setProperty("--main-color", colors[0]);
+  root.style.setProperty("--accent-color", colors[1]);
+  root.style.setProperty("--sub-accent-color", colors[2]);
+  root.style.setProperty("--background-color", colors[3]);
+  localStorage.setItem("colors", JSON.stringify(colors));
+}
+
+function checkColours(values) {
+  for (const value of values) {
+    if (value == "") {
+      return false;
+    }
+
+    if (isValidHex(value) == true) {
+      continue;
+    }
+
+    return false;
+  }
+
+  return true;
 }
 
 resetThemeButton.addEventListener("click", () => {
-    colors = ["rgb(255, 255, 255)", "rgb(37, 37, 37)", "rgb(57, 57, 57)", "rgb(251, 242, 242)"];
-
-    localStorage.setItem("colors", JSON.stringify(colors));
-
-    root.style.setProperty("--main-color", colors[0]);
-    root.style.setProperty("--accent-color", colors[1]);
-    root.style.setProperty("--sub-accent-color", colors[2]);
-    root.style.setProperty("--background-color", colors[3]);
-})
+  const defaultColors = [
+    "rgb(255, 255, 255)",
+    "rgb(37, 37, 37)",
+    "rgb(57, 57, 57)",
+    "rgb(251, 242, 242)",
+  ];
+  changeColours(defaultColors);
+});
 
 changeThemeButton.addEventListener("click", () => {
-    const mainColor = mainColorInput.value.replace(/\s+/g, '');
-    const accentColor = accentColorInput.value.replace(/\s+/g, '');
-    const backgroundColor = backgroundColorInput.value.replace(/\s+/g, '');
-    const subAccentColor = subAccentColorInput.value.replace(/\s+/g, '');
+  const mainColor = mainColorInput.value.replace(/\s+/g, "");
+  const accentColor = accentColorInput.value.replace(/\s+/g, "");
+  const backgroundColor = backgroundColorInput.value.replace(/\s+/g, "");
+  const subAccentColor = subAccentColorInput.value.replace(/\s+/g, "");
 
-    const values = [mainColor, accentColor, subAccentColor, backgroundColor];
+  const values = [mainColor, accentColor, subAccentColor, backgroundColor];
 
-    for (const value of values) {
-        if (value == "" ) {
-            return;
-        };
-
-        if (isValidHex(value) == true) {
-            continue;
-        };
-
-        return;
-    };
-
-    root.style.setProperty("--main-color", mainColor);
-    root.style.setProperty("--accent-color", accentColor);
-    root.style.setProperty("--sub-accent-color", subAccentColor);
-    root.style.setProperty("--background-color", backgroundColor);
-
-    localStorage.setItem("colors", JSON.stringify(values));
+  if (checkColours(values)) {
+    changeColours(values);
+  }
 });

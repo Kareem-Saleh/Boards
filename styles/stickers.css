@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 50px;
 }
-  
+
 .sticker-add-box {
   color: var(--main-color);
   background-color: var(--sub-accent-color);
@@ -40,7 +40,7 @@
   margin-bottom: 20px;
   font-weight: bold;
 }
-  
+
 .button-wrapper svg {
   width: 30px;
   height: 27px;
@@ -63,4 +63,8 @@
   font-size: 1rem;
   margin-left: 10px;
   margin-top: 5px;
+}
+
+.sticker-text {
+  word-break: break-all;
 }

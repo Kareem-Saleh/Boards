@@ -28,12 +28,16 @@ body {
   scrollbar-width: none;
   transition: 0.5s all ease;
 }
-  
-.about-wrapper, .change-theme-wrapper, .add-sticker-wrapper, .boards-wrapper, .rearrange-wrapper {
+
+.about-wrapper,
+.change-theme-wrapper,
+.add-sticker-wrapper,
+.boards-wrapper,
+.rearrange-wrapper {
   position: absolute;
   width: 90%;
 }
-    
+
 .active {
   background-color: var(--accent-color);
   color: var(--main-color);

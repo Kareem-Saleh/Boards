@@ -4,6 +4,7 @@
   gap: 25px;
   font-size: 1.8rem;
   line-height: 55px;
+  color: var(--accent-color);
 }
 
 .about-wrapper span {

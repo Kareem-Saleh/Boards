@@ -1,115 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BØARDS</title>
-  <link href="styles/main_styles.css" rel="stylesheet">
-  <link href="styles/variables.css" rel="stylesheet">
-  <link href="styles/index.css" rel="stylesheet">
-  <link href="styles/utils.css" rel="stylesheet">
-  <link href="styles/stickers.css" rel="stylesheet">
-  <link href="styles/theme_change.css" rel="stylesheet">
-  <link href="styles/about.css" rel="stylesheet">
-  <link href="styles/boards.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="icon" href="imgs/favicon.ico" sizes="any">
-</head>
-<body>
-  <div class="wrapper">
-    <div class="utils-wrapper">
-      <div class="board-name"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BØARDS</title>
+    <link href="styles/main_styles.css" rel="stylesheet" />
+    <link href="styles/variables.css" rel="stylesheet" />
+    <link href="styles/index.css" rel="stylesheet" />
+    <link href="styles/utils.css" rel="stylesheet" />
+    <link href="styles/stickers.css" rel="stylesheet" />
+    <link href="styles/theme_change.css" rel="stylesheet" />
+    <link href="styles/about.css" rel="stylesheet" />
+    <link href="styles/boards.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="imgs/favicon.ico" sizes="any" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="utils-wrapper">
+        <div class="board-name"></div>
 
-      <div class="util-buttons">
-        <div class="util-link add-sticky">
-          Add sticky
+        <div class="util-buttons">
+          <div class="util-link add-sticky">Add sticky</div>
+
+          <div class="util-link rearrange-boards">Rearrange stickys</div>
+
+          <div class="util-link open-boards">Open boards</div>
+
+          <div class="util-link change-theme">Change theme</div>
+
+          <div class="util-link about">About</div>
         </div>
-  
-        <div class="util-link rearrange-boards">
-          Rearrange stickys
+      </div>
+
+      <div class="content-wrapper">
+        <div class="sticker-wrapper"></div>
+
+        <div class="about-wrapper hidden">
+          <p>
+            <span
+              >This is a personal project to help me organise thoughts and
+              tasks... maybe it can also be helpful to you too!</span
+            >
+          </p>
+
+          <p>
+            Organising your thoughts can be fun. Create different "BØARDS" and
+            add "stickys" to them! Enjoy designing each board with the (soon to
+            be) plenty of customisation options!
+          </p>
+
+          <p>
+            I am planning to add more features and hopefully learning more about
+            how to create websites along the way! :D
+          </p>
+
+          <p class="sticker-tip">
+            btw to get back to your stickers you need to press the same button
+            you clicked to open the page you're on.
+          </p>
         </div>
-  
-        <div class="util-link open-boards">
-          Open boards
+
+        <div class="change-theme-wrapper hidden">
+          <p>*Only hex values can be used.</p>
+
+          <div class="enter-theme">
+            <p>Enter a main colour</p>
+            <input type="text" class="text-input main-color" />
+          </div>
+
+          <div class="enter-theme">
+            <p>Enter an accent colour</p>
+            <input type="text" class="text-input accent-color" />
+          </div>
+
+          <div class="enter-theme">
+            <p>Enter a sub accent colour</p>
+            <input type="text" class="text-input sub-accent-color" />
+          </div>
+
+          <div class="enter-theme">
+            <p>Enter a background colour</p>
+            <input type="text" class="text-input background-color" />
+          </div>
+
+          <div class="enter-theme">
+            <p>Enter a background image (optional)</p>
+            <input type="file" class="file-input" />
+          </div>
+
+          <button class="change-theme-add theme-button">Change Theme</button>
+          <button class="change-theme-reset theme-button">Reset Theme</button>
         </div>
-  
-        <div class="util-link change-theme">
-          Change theme
-        </div>
-  
-        <div class="util-link about">
-          About
+
+        <div class="boards-wrapper hidden"></div>
+
+        <div class="rearrange-wrapper hidden">To be added soon</div>
+
+        <div class="add-sticker-wrapper hidden">
+          <textarea>What's on your mind?</textarea>
         </div>
       </div>
     </div>
 
-    <div class="content-wrapper">
-      <div class="sticker-wrapper">
-      </div>
-
-      <div class="about-wrapper hidden">
-        <p>
-          <span>This is a personal project to help me organise thoughts and tasks... maybe it can also be helpful to you too!</span> 
-        </p>
-
-        <p>Organising your thoughts can be fun. Create different "BØARDS" and add "stickys" to them! Enjoy designing each board with the (soon to be) plenty of customisation options!</p>
-
-        <p>I am planning to add more features and hopefully learning more about how to create websites along the way! :D</p>
-
-        <p class="sticker-tip">btw to get back to your stickers you need to press the same button you clicked to open the page you're on.</p>
-      </div>
-
-      <div class="change-theme-wrapper hidden">
-        <p>*Only hex values can be used.</p>
-
-        <div class="enter-theme">
-          <p>Enter a main colour</p>
-          <input type="text" class="text-input main-color">
-        </div>
-
-        <div class="enter-theme">
-          <p>Enter an accent colour</p>
-          <input type="text" class="text-input accent-color">
-        </div>
-
-        <div class="enter-theme">
-          <p>Enter a sub accent colour</p>
-          <input type="text" class="text-input sub-accent-color">
-        </div>
-
-        <div class="enter-theme">
-          <p>Enter a background colour</p>
-          <input type="text" class="text-input background-color">
-        </div>
-
-        <div class="enter-theme">
-          <p>Enter a background image (optional)</p>
-          <input type="file" class="file-input">
-        </div>
-
-        <button class="change-theme-add theme-button">Change Theme</button>
-        <button class="change-theme-reset theme-button">Reset Theme</button>
-      </div>
-
-      <div class="boards-wrapper hidden">
-      </div>
-
-      <div class="rearrange-wrapper hidden">
-        To be added soon
-      </div>
-
-      <div class="add-sticker-wrapper hidden">
-        <textarea>What's on your mind?</textarea>
-      </div>
-    </div>
-  </div>
-
-  <script src="./scripts/openUtil.js" type="module"></script>
-  <script src="./scripts/addSticky.js" type="module"></script>
-  <script src="./scripts/changeTheme.js"></script>
-  <script src="./scripts/renderAll.js"></script>
-  <script src="./scripts/boards.js"></script>
-</body>
+    <script src="./scripts/openUtil.js" type="module"></script>
+    <script src="./scripts/addSticky.js" type="module"></script>
+    <script src="./scripts/changeTheme.js"></script>
+    <script src="./scripts/renderAll.js" type="module"></script>
+    <script src="./scripts/boards.js" type="module"></script>
+  </body>
 </html>
