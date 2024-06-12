@@ -1,4 +1,4 @@
-import { renderAll } from "./renderAll.js";
+import { renderAll, checkLocalStickys } from "./renderAll.js";
 
 const boardName = document.querySelector(".board-name");
 const boardWrapper = document.querySelector(".boards-wrapper");
@@ -13,11 +13,12 @@ const defaultBoard = {
 let currentBoard = localStorage.getItem("currentBoard") || "default-board";
 let storedBoards = JSON.parse(localStorage.getItem("boards"));
 
-checkLocalStorage();
+checkLocalBoards();
+checkLocalStickys();
 renderBoard(currentBoard);
 changeBoardNameHeader(currentBoard);
 
-function checkLocalStorage() {
+function checkLocalBoards() {
   if (storedBoards == null) {
     localStorage.setItem("boards", JSON.stringify([defaultBoard]));
     storedBoards = JSON.parse(localStorage.getItem("boards"));
@@ -132,33 +133,29 @@ function addBoard(id) {
   stickys.push(defaultSticky);
   localStorage.setItem("stickys", JSON.stringify(stickys));
 
-  renderBoard(id);
+  selectBoard(uuidBoard);
+
+  // localStorage.setItem("currentBoard", uuidBoard);
+
+  // changeBoardNameHeader(uuidBoard);
+  // renderBoard(uuidBoard);
 }
 
 function deleteBoard(id) {
   let boards = JSON.parse(localStorage.getItem("boards"));
   const stickys = JSON.parse(localStorage.getItem("stickys"));
 
+  let notDeleted = [];
+
   for (let i = 0; i < boards.length; i++) {
     if (boards[i].id == id) {
-      let deletedAll = false;
-
-      while (deletedAll == false) {
-        let deleted = [];
-
-        for (let j = 0; j < stickys.length; j++) {
-          if (stickys[j].board == boards[i].id) {
-            deleted.push(stickys[i]);
-            stickys.splice(j, 1);
-          }
-        }
-
-        if (deleted.length == 0) {
-          deletedAll = true;
+      for (let j = 0; j < stickys.length; j++) {
+        if (stickys[j].board != boards[i].id) {
+          notDeleted.push(stickys[j]);
         }
       }
 
-      localStorage.setItem("stickys", JSON.stringify(stickys));
+      localStorage.setItem("stickys", JSON.stringify(notDeleted));
 
       boards.splice(i, 1);
       localStorage.setItem("boards", JSON.stringify(boards));
@@ -202,7 +199,7 @@ function deleteBoard(id) {
   }
 }
 
-function checkZeroStickys(id) {
+export function checkZeroStickys(id) {
   const stickys = JSON.parse(localStorage.getItem("stickys"));
   let noStickys = true;
 
@@ -214,17 +211,6 @@ function checkZeroStickys(id) {
 
   if (noStickys == true) {
     addDefaultSticky(id, stickys);
-    //   const uuidSticky = self.crypto.randomUUID();
-
-    //   const defaultSticky = {
-    //     content:
-    //       "This your first sticky on the board! Lets get organised and add more stickys to the board.",
-    //     id: uuidSticky,
-    //     board: id,
-    //   };
-
-    //   stickys.push(defaultSticky);
-    //   localStorage.setItem("stickys", JSON.stringify(stickys));
   }
 }
 

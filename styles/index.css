@@ -60,3 +60,28 @@ body {
 .border-line {
   flex-direction: row;
 }
+
+@media (width < 1280px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+@media (width < 800px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: normal;
+    height: fit-content;
+  }
+
+  .utils-wrapper {
+    width: 100%;
+    padding: 100px;
+  }
+
+  .content-wrapper {
+    border-left: none;
+    overflow-y: visible;
+    height: auto;
+  }
+}

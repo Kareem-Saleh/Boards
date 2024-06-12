@@ -12,6 +12,8 @@
   height: 200px;
   font-weight: bold;
   font-size: 1.5rem;
+  word-break: break-word;
+  padding: 20px;
 }
 
 .board {
