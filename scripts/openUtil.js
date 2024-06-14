@@ -46,3 +46,42 @@ for (const page in pages) {
     });
   })(page);
 }
+
+const openButton = document.querySelector(".utils-open-button");
+const utilsButtons = document.querySelector(".util-buttons");
+
+let state = false;
+
+function openUtils() {
+  if (window.innerWidth < 800) {
+    openButton.addEventListener("click", () => {
+      if (!state) {
+        utilsButtons.style.display = "flex";
+        state = true;
+      } else {
+        utilsButtons.style.display = "none";
+        state = false;
+      }
+    });
+  } else {
+    utilsButtons.style.display = "flex";
+  }
+}
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth < 800) {
+    openButton.addEventListener("click", () => {
+      if (!state) {
+        utilsButtons.style.display = "flex";
+        state = true;
+      } else {
+        utilsButtons.style.display = "none";
+        state = false;
+      }
+    });
+  } else {
+    utilsButtons.style.display = "flex";
+  }
+});
+
+openUtils();
